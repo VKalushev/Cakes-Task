@@ -125,9 +125,15 @@ class Bakery:
 
 
 
-recipe = Recipe({"apples": None, "flour": 300, "sugar": 150, "milk": 100, "oil":100})
-storage = Storage({"sugar": 500, "flour": 2000, "milk": 2000})
-storage.add_single_ingredient("oil", 100)
+# recipe = Recipe({"apples": None, "flour": 300, "sugar": 150, "milk": 100, "oil":100})
+# storage = Storage({"sugar": 500, "flour": 2000, "milk": 2000})
+# storage.add_single_ingredient("oil", 100)
 
-bakery = Bakery()
-print(bakery.cakes(recipe, storage))
+# bakery = Bakery()
+# print(bakery.cakes(recipe, storage))
+
+def cakes(recipe, available):
+    bakery = Bakery()
+    temp_recipe = Recipe(recipe)
+    temp_storage = Storage(available)
+    return bakery.cakes(temp_recipe,temp_storage)
